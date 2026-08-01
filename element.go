@@ -1,5 +1,6 @@
 package anitomy
 
+// ElementKind represents the category of a parsed element from a filename.
 type ElementKind string
 
 const (
@@ -26,6 +27,7 @@ const (
 	Year               ElementKind = "year"
 )
 
+// Element represents a single parsed semantic token, containing its kind, extracted value, and rune position in the original filename.
 type Element struct {
 	Kind     ElementKind
 	Value    string

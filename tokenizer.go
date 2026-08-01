@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// Tokenizer handles breaking the input filename down into lexical tokens (brackets, delimiters, and text keywords).
 type Tokenizer struct {
 	input  []rune
 	view   []rune

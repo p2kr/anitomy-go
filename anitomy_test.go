@@ -13,7 +13,7 @@ import (
 
 type TestData struct {
 	Input  string                 `json:"input"`
-	Output map[string]interface{} `json:"output"`
+	Output map[string]any `json:"output"`
 }
 
 func TestAnitomyData(t *testing.T) {
@@ -42,7 +42,7 @@ func TestAnitomyData(t *testing.T) {
 				switch v := expectedVal.(type) {
 				case string:
 					expectedValues = append(expectedValues, v)
-				case []interface{}:
+				case []any:
 					for _, item := range v {
 						if s, ok := item.(string); ok {
 							expectedValues = append(expectedValues, s)

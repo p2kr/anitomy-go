@@ -2,6 +2,7 @@ package anitomy
 
 import "sort"
 
+// Parser holds the tokenized elements and provides methods to extract metadata based on the provided Options.
 type Parser struct {
 	Tokens   []Token
 	Elements []Element

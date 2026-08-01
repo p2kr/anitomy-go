@@ -1,5 +1,7 @@
 package anitomy
 
+// Options configures which elements the Anitomy parser will attempt to extract.
+// Setting a field to false will skip the corresponding extraction step, improving performance if that data is not needed.
 type Options struct {
 	ParseEpisode         bool
 	ParseEpisodeTitle    bool
@@ -13,6 +15,8 @@ type Options struct {
 	ParseYear            bool
 }
 
+// DefaultOptions returns an Options struct with all parsing features enabled,
+// mirroring the default behavior of the C++ Anitomy library.
 func DefaultOptions() Options {
 	return Options{
 		ParseEpisode:         true,

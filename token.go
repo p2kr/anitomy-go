@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// TokenKind indicates whether a token is unknown, a bracket, delimiter, or identifier.
 type TokenKind int
 
 const (
@@ -14,6 +15,7 @@ const (
 	TokenText
 )
 
+// KeywordKind maps semantic keywords to their corresponding metadata categories.
 type KeywordKind int
 
 const (
@@ -54,6 +56,7 @@ const (
 	FlagPrefixForOther
 )
 
+// Keyword represents a predefined semantic keyword matched from the filename.
 type Keyword struct {
 	Kind  KeywordKind
 	Flags KeywordFlags
@@ -75,6 +78,8 @@ func (k Keyword) IsPrefixForOther() bool {
 	return (k.Flags & FlagPrefixForOther) != 0
 }
 
+// Token represents a lexical token from the input string after tokenization.
+// It contains metadata about its bounds, properties, and whether it matched a keyword.
 type Token struct {
 	Kind        TokenKind
 	Value       string
